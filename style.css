@@ -68,3 +68,13 @@ input{
     display: block;
     margin: 10px auto;
 }
+.bigger{
+    width: 1735px;
+}
+#exo3hover {
+    background-color: #63A8BC;
+    color: #fff;
+    height: 370px;
+    width: 450px;
+    font-size: 20px;
+}

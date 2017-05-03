@@ -9,17 +9,33 @@
   <body>
       <h1>Exercices Jquery base 2</h1>
       <p><b>Charger la dernière version de Jquery et lier le fichier dans la balise head du document html.</b></p>
-
       <hr>
       <!-------------------------------------------- Exercice 1 -------------------------------------->
       <h3><em>Exercice 1</em></h3>
       <p>Créer un bouton "cliquez-moi!" en html. <br>Au clic sur le bouton, afficher une boite de dialogue avec le message :<br><b>"On vous ferait vraiment faire n'importe quoi !"</b></p>
+          <button class="button"name="button">cliquez-moi</button>
+
+            <script>
+              $(document).ready(function(){
+                $('.button').click(function(){
+                  alert("On vous ferait vraiment faire n'importe quoi !");
+                });
+              });
+            </script>
 
       <hr>
       <!-------------------------------------------- Exercice 2 -------------------------------------->
       <h3>Exercice 2</h3>
       <p>Au double click, modifier la largeur de l'image à <b>1735px</b></p>
-      <img src="image1.jpg"/>
+      <img src="image1.jpg"class="image1"/>
+
+          <script>
+            $(document).ready(function(){
+              $(".image1").dblclick(function(){
+                $(this).toggleClass("bigger");//Parameters added to css using .bigger
+              });
+            });
+          </script>
 
       <hr>
       <!-------------------------------------------- Exercice 3 -------------------------------------->
@@ -38,6 +54,17 @@
               <br><b>Charles Antony Richard Hoare</b></p>
       </div>
 
+          <script>
+            $(document).ready(function(){
+              $('#exo3').hover(function(){
+                $(this).css({
+                  "background-color":"#63A8BC",
+                  "color":"#fff",
+                  "width":"450px",
+                  "font-size":"20px",})
+              });
+            });
+          </script>
       <hr>
       <!-------------------------------------------- Exercice 4 -------------------------------------->
       <h3>Exercice 4</h3>
@@ -50,6 +77,26 @@
       <button id="btn2">Bleu</button>
       <button id="btn3">Rouge</button>
 
+          <script>
+            $(document).ready(function(){
+              $('#btn1').on('click', function(){
+                $('#exo4').css({
+                  "color":"green",
+                  "border-color":"green",})
+              });
+              $('#btn2').on('click', function(){
+                $('#exo4').css({
+                  "color":"blue",
+                  "border-color":"blue",})
+              });
+              $('#btn3').on('click', function(){
+                $('#exo4').css({
+                  "color":"red",
+                  "border-color":"red",})
+              });
+            });
+          </script>
+
       <hr>
       <!-------------------------------------------- Exercice 5 -------------------------------------->
       <h3>Exercice 5</h3>
@@ -61,6 +108,36 @@
           <input type="password" placeholder="Votre mot de passe">
           <button type="submit">Valider</button>
       </form>
+
+          <script>
+             $(document).ready(function(){
+              $('input:text').focusin(function(){
+                $(this).css({
+                  "border":"solid",
+                  "border-color":"green",
+                  "border-size": "1px"})
+              });
+              $('input:text').focusout(function(){
+                $(this).css({
+                  "border":"solid",
+                  "border-color":"red",
+                  "border-size": "1px"})
+              });
+              $('input:password').focusin(function(){
+                $(this).css({
+                  "border":"solid",
+                  "border-color":"green",
+                  "border-size": "1px"})
+              });
+              $('input:password').focusout(function(){
+                $(this).css({
+                  "border":"solid",
+                  "border-color":"red",
+                  "border-size": "1px"})
+              });
+            });
+          </script>
+
 
       <hr>
       <!-------------------------------------------- Exercice 6 -------------------------------------->
@@ -75,6 +152,34 @@
       <button id="btn5">Bleu</button>
       <button id="btn6">Rouge</button>
 
+          <script>
+             $(document).ready(function(){
+              $('#btn4').mouseenter(function(){
+                $('#exo6').css({
+                  "color":"green"})
+              });
+              $('#btn4').mouseleave(function(){
+                $('#exo6').css({
+                  "color":"black",})
+              });
+              $('#btn5').mouseenter(function(){
+                $('#exo6').css({
+                  "color":"blue"})
+              });
+              $('#btn5').mouseleave(function(){
+                $('#exo6').css({
+                  "color":"black",})
+              });
+              $('#btn6').mouseenter(function(){
+                $('#exo6').css({
+                  "color":"red"})
+              });
+              $('#btn6').mouseleave(function(){
+                $('#exo6').css({
+                  "color":"black",})
+              });
+            });
+          </script>
 
   </body>
 </html>
